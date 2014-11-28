@@ -167,8 +167,8 @@ module.exports = function (grunt) {
     // Automatically inject Bower components into the HTML file
     wiredep: {
       app: {
-        ignorePath: /^\/|\.\.\//,
-        src: '<%= config.app %>/index.jade',
+        ignorePath: /^<%= config.app %>\/|\.\.\//,
+        src: '<%= config.app %>/index.html',
         exclude: ['bower_components/bootstrap/dist/js/bootstrap.js']
       }
     },
@@ -329,6 +329,9 @@ module.exports = function (grunt) {
     },
 
     jade: {
+      options: {
+        pretty: true
+      },
       index: {
         files: {
           '<%=config.app %>/index.html': ['<%= config.app %>/index.jade'],
@@ -348,8 +351,8 @@ module.exports = function (grunt) {
 
     grunt.task.run([
       'clean:server',
-      'wiredep',
       'jade',
+      'wiredep',
       'concurrent:server',
       'autoprefixer',
       'connect:livereload',
@@ -379,11 +382,14 @@ module.exports = function (grunt) {
 
   grunt.registerTask('build', [
     'clean:dist',
-    'wiredep',
     'jade',
+    'wiredep',
     'useminPrepare',
     'concurrent:dist',
     'autoprefixer',
+    'concat',
+    'cssmin',
+    'uglify',
     'copy:dist',
     'rev',
     'usemin',
