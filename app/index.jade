@@ -1,0 +1,41 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="utf-8")
+    title Gedcom Viewer
+    // build:css(.) styles/vendor.css
+    // bower:css
+    link(rel='stylesheet', href='bower_components/bootstrap/dist/css/bootstrap.css')
+    link(rel='stylesheet', href='bower_components/DataTables/media/css/jquery.dataTables.css')
+    link(rel='stylesheet', href='bower_components/bower-bootswatch-paper/css/paper.css')
+    // endbower
+    // endbuild
+    // build:css(.tmp) styles/main.css
+    link(rel="stylesheet" href="styles/main.css")
+    // endbuild
+
+  body
+    .container
+      .header
+        ul.nav.nav-pills.pull-right
+          li
+            span.btn.btn-primary.btn-file(type="button") Open
+              input.file.open-gedcom(type="file")
+          li
+            button.btn.btn-primary(type="button") About
+        h3.text-muted Online Gedcom Viewer
+
+    .container-fluid
+      .row
+        .col-md-12
+          table.table.people-table.display.compact(width="100%", cellspacing="0")
+    // build:js(.) scripts/vendor.js
+    // bower:js
+    script(src='bower_components/jquery/dist/jquery.js')
+    script(src='bower_components/jsgedcom/dist/jsgedcom.js')
+    script(src='bower_components/DataTables/media/js/jquery.dataTables.js')
+    // endbower
+    // endbuild
+    // build:js(.) scripts/main.js
+    script(src="scripts/main.js")
+    // endbuild
