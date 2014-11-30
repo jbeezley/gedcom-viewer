@@ -13,23 +13,25 @@ html(lang="en")
     // endbuild
 
   body
-    .container
+    .container-fluid
       .header
         ul.nav.nav-pills.pull-right
           li
-            span.btn.btn-primary.btn-file(type="button") Open
-              input.file.open-gedcom(type="file")
-          li
-            button.btn.btn-primary(type="button") About
+            input.btn.btn-primary.file.open-gedcom(type="file", data-filename-placement="inside")
         h3.text-muted Online Gedcom Viewer
 
     .container-fluid
       .row
         .col-md-12
           table.table.people-table.display.compact(width="100%", cellspacing="0")
+      .row
+        .col-md-12
+          .graph-container
     // build:js(.) scripts/vendor.js
     // bower:js
     // endbower
+    script(src="bower_components/taffydb/taffy.js")
+    script(src="bower_components/bootstrap-file-input/bootstrap.file-input.js")
     // endbuild
 
     // build:js(app) scripts/main.js

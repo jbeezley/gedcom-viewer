@@ -5,6 +5,9 @@
     "bootstrap": "~3.2.0",
     "jsgedcom": "jbeezley/jsgedcom",
     "DataTables": "~1.10.4",
-    "bower-bootswatch-paper": "git://github.com/gintsgints/bower-bootswatch-paper.git"
+    "bower-bootswatch-paper": "git://github.com/gintsgints/bower-bootswatch-paper.git",
+    "d3": "~3.4.13",
+    "taffydb": "*",
+    "bootstrap-file-input": "~1.0.0"
   }
 }

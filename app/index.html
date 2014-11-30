@@ -15,13 +15,11 @@
     <!-- endbuild-->
   </head>
   <body>
-    <div class="container">
+    <div class="container-fluid">
       <div class="header">
         <ul class="nav nav-pills pull-right">
-          <li><span type="button" class="btn btn-primary btn-file">Open
-              <input type="file" class="file open-gedcom"></span></li>
           <li>
-            <button type="button" class="btn btn-primary">About</button>
+            <input type="file" data-filename-placement="inside" class="btn btn-primary file open-gedcom">
           </li>
         </ul>
         <h3 class="text-muted">Online Gedcom Viewer</h3>
@@ -33,13 +31,21 @@
           <table width="100%" cellspacing="0" class="table people-table display compact"></table>
         </div>
       </div>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="graph-container"></div>
+        </div>
+      </div>
     </div>
     <!-- build:js(.) scripts/vendor.js-->
     <!-- bower:js-->
     <script src="bower_components/jquery/dist/jquery.js"></script>
     <script src="bower_components/jsgedcom/dist/jsgedcom.js"></script>
     <script src="bower_components/DataTables/media/js/jquery.dataTables.js"></script>
+    <script src="bower_components/d3/d3.js"></script>
     <!-- endbower-->
+    <script src="bower_components/taffydb/taffy.js"></script>
+    <script src="bower_components/bootstrap-file-input/bootstrap.file-input.js"></script>
     <!-- endbuild-->
     <!-- build:js(app) scripts/main.js-->
     <script src="scripts/main.js"></script>
